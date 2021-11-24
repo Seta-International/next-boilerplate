@@ -1,5 +1,5 @@
 import "../global.scss";
-import { wrapper } from '../store';
+import { wrapper } from '../app/store';
 
 interface IProps {
   Component: any;

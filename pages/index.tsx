@@ -2,12 +2,13 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { startClock } from '../redux/counters/actions'
 import Page from '../components/Page'
+import { START_CLOCK } from 'redux/counters/counterSlice'
 
 const Index = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(startClock())
+    dispatch(START_CLOCK())
   }, [dispatch])
 
   return <Page title="Index Page" linkTo="/users" NavigateTo="User Page" />
