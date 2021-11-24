@@ -1,19 +1,17 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { START_CLOCK } from 'redux/counters/counterSlice'
-import Page from '../components/Page'
-import { startClock } from '../redux/counters/actions'
-import { loadData } from '../redux/users/actions'
-
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { START_CLOCK } from 'redux/counters/counterSlice';
+import { LOAD_DATA } from 'redux/users/userSlice';
+import Page from '../components/Page';
 
 const Other = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(START_CLOCK())
-        // dispatch(loadData())
-    }, [dispatch])
+        dispatch(START_CLOCK());
+        dispatch(LOAD_DATA());
+    }, [dispatch]);
 
-    return <Page title="Other Page" linkTo="/" NavigateTo="Index Page" />
-}
+    return <Page title="Other Page" linkTo="/" NavigateTo="Index Page" />;
+};
 
-export default Other
+export default Other;
