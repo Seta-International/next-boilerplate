@@ -7,7 +7,6 @@ import { loadData } from '../redux/users/actions'
 
 const Other = () => {
     const dispatch = useDispatch()
-
     useEffect(() => {
         dispatch(startClock())
         dispatch(loadData())
