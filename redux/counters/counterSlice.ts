@@ -22,45 +22,27 @@ export const counterSlice = createSlice({
     initialState,
     reducers: {
         FAILURE: (state, action: AnyAction) => {
-            return {
-                ...state,
-                ...{ error: action.error },
-            };
+            state.error = action.error;
         },
         INCREMENT: (state) => {
-            return {
-                ...state,
-                ...{ count: state.count + 1 },
-            };
+            state.count += 1;
         },
         DECREMENT: (state) => {
-            return {
-                ...state,
-                ...{ count: state.count - 1 },
-            };
+            state.count -= 1;
         },
         RESET: (state) => {
-            return {
-                ...state,
-                ...{ count: initialState.count },
-            };
+            state.count = initialState.count;
         },
         LOAD_DATA_SUCCESS: (state, action: AnyAction) => {
-            return {
-                ...state,
-                ...{ placeholderData: action.data },
-            };
+            state.placeholderData = action.data;
         },
         TICK_CLOCK: (state, action: AnyAction) => {
-            return {
-                ...state,
-                ...{ lastUpdate: action.ts, light: !!action.light },
-            };
+            state.lastUpdate = action.ts;
+            state.light = !!action.light;
         },
     },
     extraReducers: {
         [HYDRATE]: (state, action) => {
-            console.log('HYDRATE', state, action.payload);
             return {
                 ...state,
                 ...action.payload.subject,

@@ -14,21 +14,14 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         FAILURE: (state, action: AnyAction) => {
-            return {
-                ...state,
-                ...{ error: action.error },
-            };
+            state.error = action.error;
         },
         LOAD_DATA_SUCCESS: (state, action: AnyAction) => {
-            return {
-                ...state,
-                users: action.data,
-            };
+            state.users = action.data;
         },
     },
     extraReducers: {
         [HYDRATE]: (state, action) => {
-            console.log('HYDRATE', state, action.payload);
             return {
                 ...state,
                 ...action.payload.subject,
@@ -37,22 +30,22 @@ export const userSlice = createSlice({
     },
 });
 
-export const {FAILURE, LOAD_DATA_SUCCESS} = userSlice.actions;
+export const { FAILURE, LOAD_DATA_SUCCESS } = userSlice.actions;
 
 export const LOAD_DATA = createAction('LOAD_DATA');
 
 export function loadDataSuccess(data: User[]) {
-  return {
-    type: LOAD_DATA_SUCCESS.type,
-    data,
-  };
+    return {
+        type: LOAD_DATA_SUCCESS.type,
+        data,
+    };
 }
 
 export function failure(error: unknown) {
-  return {
-    type: FAILURE.type,
-    error,
-  };
+    return {
+        type: FAILURE.type,
+        error,
+    };
 }
 
 export default userSlice.reducer;
