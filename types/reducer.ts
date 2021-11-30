@@ -5,8 +5,6 @@ export interface ICounterState {
     lastUpdate: number;
     light: string;
     placeholderData: string;
-  },
-  user: {
-    
-  }
+  };
+  user: Record<string, unknown>;
 }

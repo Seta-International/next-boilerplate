@@ -4,7 +4,7 @@ import userReducer from '../redux/users/userSlice';
 
 const rootReducer = combineReducers({
   user: userReducer,
-  counter: counterReducer
-})
+  counter: counterReducer,
+});
 
 export default rootReducer;
