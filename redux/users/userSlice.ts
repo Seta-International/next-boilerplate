@@ -1,5 +1,6 @@
 import { AnyAction, createAction, createSlice } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
+import { User } from 'types/user';
 
 const initialState = {
   error: {},
