@@ -1,13 +1,9 @@
-import "../global.scss";
+import { AppProps } from 'next/app';
+import '../global.scss';
 import { wrapper } from '../app/store';
 
-interface IProps {
-  Component: any;
-  pageProps: Record<string, unknown>;
+function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
 }
 
-function App({ Component, pageProps }:IProps) {
-  return <Component {...pageProps} />
-}
-
-export default wrapper.withRedux(App)
+export default wrapper.withRedux(App);

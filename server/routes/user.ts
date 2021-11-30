@@ -4,7 +4,7 @@ import users from './users.json';
 const router = express.Router();
 
 router.get('/api/users', (_, res) => {
-    res.json(users)
-})
+  res.json(users);
+});
 
 export default router;

@@ -5,13 +5,13 @@ import { LOAD_DATA } from 'redux/users/userSlice';
 import Page from '../components/Page';
 
 const Other = () => {
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(START_CLOCK());
-        dispatch(LOAD_DATA());
-    }, [dispatch]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(START_CLOCK());
+    dispatch(LOAD_DATA());
+  }, [dispatch]);
 
-    return <Page title="Other Page" linkTo="/" NavigateTo="Index Page" />;
+  return <Page title="Other Page" linkTo="/" NavigateTo="Index Page" />;
 };
 
 export default Other;
