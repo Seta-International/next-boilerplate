@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import {
     DECREMENT,
@@ -22,9 +23,19 @@ const Counter = () => {
             <h1>
                 Count: <span>{count}</span>
             </h1>
-            <button onClick={() => dispatch(INCREMENT())}>+1</button>
-            <button onClick={() => dispatch(DECREMENT())}>-1</button>
-            <button onClick={() => dispatch(RESET())}>Reset</button>
+            <Button variant="contained" onClick={() => dispatch(INCREMENT())}>
+                +1
+            </Button>
+            <Button variant="contained" onClick={() => dispatch(DECREMENT())}>
+                -1
+            </Button>
+            <Button
+                variant="contained"
+                color="error"
+                onClick={() => dispatch(RESET())}
+            >
+                Reset
+            </Button>
         </div>
     );
 };

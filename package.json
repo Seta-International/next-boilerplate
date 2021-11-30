@@ -6,6 +6,10 @@
     "start": "cross-env NODE_ENV=production node dist/index.js"
   },
   "dependencies": {
+    "@emotion/react": "^11.7.0",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.2.2",
     "@reduxjs/toolkit": "^1.6.2",
     "cross-env": "7.0.2",
     "express": "4.17.1",
