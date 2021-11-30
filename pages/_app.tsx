@@ -1,4 +1,4 @@
-import "../global.scss";
+import '../global.scss';
 import { wrapper } from '../app/store';
 
 interface IProps {
@@ -6,8 +6,8 @@ interface IProps {
   pageProps: Record<string, unknown>;
 }
 
-function App({ Component, pageProps }:IProps) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }: IProps) {
+  return <Component {...pageProps} />;
 }
 
-export default wrapper.withRedux(App)
+export default wrapper.withRedux(App);
