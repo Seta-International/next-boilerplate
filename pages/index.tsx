@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { startClock } from '../redux/counters/actions';
 import Page from '../components/Page';
 import { START_CLOCK } from 'redux/counters/counterSlice';
 

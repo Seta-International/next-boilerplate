@@ -1,12 +1,8 @@
+import { AppProps } from 'next/app';
 import '../global.scss';
 import { wrapper } from '../app/store';
 
-interface IProps {
-  Component: any;
-  pageProps: Record<string, unknown>;
-}
-
-function App({ Component, pageProps }: IProps) {
+function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }
 
