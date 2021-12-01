@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import Counter from './Counter';
 import Clock from './Clock';
 import { ICounterState } from 'types/reducer';
+import TestLink from './TestLink';
 
 function Page({
   linkTo,
@@ -24,6 +25,7 @@ function Page({
   );
   return (
     <div>
+      <TestLink />
       <h1>{title}</h1>
       <Clock lastUpdate={lastUpdate} light={light} />
       <Counter />
