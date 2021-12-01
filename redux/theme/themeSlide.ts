@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AppState } from 'app/store';
+import { HYDRATE } from 'next-redux-wrapper';
 
 const keyStore = 'darkmode';
 
@@ -25,6 +26,14 @@ export const themeSlice = createSlice({
       const nextValue = !state.value;
       localStorage.setItem(keyStore, nextValue.toString());
       state.value = nextValue;
+    },
+  },
+  extraReducers: {
+    [HYDRATE]: (state, action) => {
+      return {
+        ...state,
+        ...action.payload.subject,
+      };
     },
   },
 });
